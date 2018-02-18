@@ -2,15 +2,22 @@
 
 from distutils.core import setup
 
+try:
+    from pypandoc import convert
+    read_md = lambda f: convert(f, 'rst')
+except ImportError:
+    print("warning: pypandoc module not found, could not convert Markdown to RST")
+    read_md = lambda f: open(f, 'r').read()
+
+
 setup(
       name = 'EagleSCR'
-   ,  version = '0.0.1'
+   ,  version = '0.1.0'
    ,  description = 'Parser for the Eagle scripting language'
-   ,  long_description = """Parser and partial evaluator for the scripting \
-   language used by AutoDesk's Eagle CAD software."""
+   ,  long_description = read_md('README.md')
    ,  author = 'Derp Ston'
    ,  author_email = 'derpston+pypi@sleepygeek.org'
    ,  url = 'https://github.com/derpston/pyEagleSCR'
-   ,  package_dir = {'': 'eaglescr'}
+   ,  packages = ['eaglescr']
    )
 

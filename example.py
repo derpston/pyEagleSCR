@@ -1,6 +1,4 @@
-import sys
-sys.path.append("eaglescr")
-import parser
+import eaglescr
 import pprint
 import argparse
 
@@ -11,7 +9,7 @@ argparser.add_argument('path', metavar='path-to-scr-file', type=str, \
 args = argparser.parse_args()
 
 # Eagle SCR parser.
-scrparser = parser.Parser()
+scrparser = eaglescr.Parser()
 
 for line_index, line in enumerate(open(args.path)):
     if not scrparser.handle_line(line):
