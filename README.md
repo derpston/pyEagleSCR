@@ -1,3 +1,7 @@
+pyEagleSCR
+--
+
+
 # TODO Support more Eagle SCR commands
 # Unsupported:
 # Change (applies to Package and Symbol)
@@ -13,3 +17,4 @@
 # TODO What's the Eagle default for layer and grid?
 # Any other default settings that should be initialised here?
 
+# TODO Support case-insensitive commands
