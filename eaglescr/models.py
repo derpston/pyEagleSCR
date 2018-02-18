@@ -64,11 +64,11 @@ class Wire(object):
     
     def __init__(self, context, **kwargs):
         self.context = context
-        self.size = kwargs['size']
-        self.x1 = kwargs['x1']
-        self.y1 = kwargs['y1']
-        self.x2 = kwargs['x2']
-        self.y2 = kwargs['y2']
+        self.size = float(kwargs['size'])
+        self.x1 = float(kwargs['x1'])
+        self.y1 = float(kwargs['y1'])
+        self.x2 = float(kwargs['x2'])
+        self.y2 = float(kwargs['y2'])
         self.layer = context['layer']
 
 
@@ -114,9 +114,13 @@ class EditDevice(object):
 
     def handle(self, obj):
         if isinstance(obj, Prefix):
-            self.prefix = obj
+            self.prefix = obj.prefix
         elif isinstance(obj, Add):
-            self.symbols[obj.prefix] = obj
+            # Look up the symbol object that this device maps to, and set up
+            # a bi-directional map between the symbol and this device.
+            sym = self.context['symbols'][obj.name]
+            self.symbols[obj.prefix] = sym
+            sym.device = self
         elif isinstance(obj, Package):
             # TODO look up package and get the real reference.
             self.package = self.context['packages'][obj.name]
