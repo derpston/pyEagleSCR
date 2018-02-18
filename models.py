@@ -1,5 +1,3 @@
-import re
-
 class Pin(object):
     regex = "^Pin '(?P<name>[A-Za-z0-9_-]+)' "\
         "(?P<pintype>[A-Za-z/]+) "\
