@@ -92,8 +92,6 @@ class EditSymbol(object):
             self.lines.append(obj)
             return
 
-        print "handling a thing", obj
-
     def __repr__(self):
         return "<Symbol %s, %d pins, %d lines>" % (self.name, len(self.pins), len(self.lines))
 
@@ -237,7 +235,7 @@ class Smd(object):
         self.x = float(kwargs['x'])
         self.y = float(kwargs['y'])
         self.layer = context['layer']
-    
+
     def __repr__(self):
         return "<Smd %s x=%d y=%d width=%d height=%d rotation=%d>" % (
             self.name, self.width, self.height, self.rotation, 
