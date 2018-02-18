@@ -1,5 +1,5 @@
 import sys
-sys.path.append("src")
+sys.path.append("eaglescr")
 import parser
 import pprint
 import argparse

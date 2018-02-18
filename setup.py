@@ -11,6 +11,6 @@ setup(
    ,  author = 'Derp Ston'
    ,  author_email = 'derpston+pypi@sleepygeek.org'
    ,  url = 'https://github.com/derpston/pyEagleSCR'
-   ,  package_dir = {'': 'src'}
+   ,  package_dir = {'': 'eaglescr'}
    )
 
