@@ -49,9 +49,12 @@ print pins['VDDA']
 # <Pin VDDA type=Pwr rotation=0 position=-700,1800 device=STM32F405RGT6.13>
 ```
 
-If this script file had information about the package and the device for this symbol, you can also get the physical pad information for any pin:
+If this script file had information about the package and the device for this symbol, you can also get the physical pad information for any pin by looking up the corresponding pin in the package spec:
 ```python
-# TODO :)
+pin_number = pins['VDDA'].device_pin_number
+# '13'
+scrparser.context['packages']['QFP50P1200X1200X160-64N'].smd_pads[pin_number]
+# <Smd 13 x=11 y=58 width=270 height=-221 rotation=-89>
 ```
 
 Contributing
@@ -61,6 +64,9 @@ Contributions are welcome! Please open a PR!
 TODO
 --
 
+* The API is a little janky:
+  * Names of attributes could be more obvious
+  * Pins should have references to their corresponding pads on the package
 * Support more Eagle SCR commands, like:
   * Change (applies to Package and Symbol)
   * Text (applies to Package and Symbol)
