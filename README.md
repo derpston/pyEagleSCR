@@ -7,8 +7,19 @@ For now, it aims to support only the functionality needed to parse symbols and p
 Status
 --
 Basic functionality working, including (probably not quite full) support for these commands:
-...
-
+* Edit, with support for Symbols, Packages and Devices
+* Prefix
+* Pin
+* Wire
+* Layer
+* Connect
+* Description
+* Attribute
+* Add
+* Package
+* Smd
+* Grid
+* Set
 
 Example
 --
