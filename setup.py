@@ -12,7 +12,7 @@ except ImportError:
 
 setup(
       name = 'EagleSCR'
-   ,  version = '0.1.0'
+   ,  version = '0.2.0'
    ,  description = 'Parser for the Eagle scripting language'
    ,  long_description = read_md('README.md')
    ,  author = 'Derp Ston'
